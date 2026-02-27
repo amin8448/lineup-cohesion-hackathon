@@ -64,7 +64,7 @@ st.markdown("""
 @st.cache_data
 def load_data():
     """Load cached cohesion results."""
-    data_path = Path('../data/cohesion_results.csv')
+    data_path = Path('data/cohesion_results.csv')
     if data_path.exists():
         return pd.read_csv(data_path)
     else:
@@ -280,7 +280,7 @@ def create_network_viz(G, title="Passing Network"):
 @st.cache_data
 def load_player_impacts():
     """Load player impact data."""
-    impact_path = Path('../data/player_impacts.csv')
+    impact_path = Path('data/player_impacts.csv')
     if impact_path.exists():
         return pd.read_csv(impact_path)
     else:
