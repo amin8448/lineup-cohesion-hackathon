@@ -5,7 +5,7 @@
 **Authors:** Mohammad-Amin Nabavi, Shirley Mills  
 **Affiliation:** School of Mathematics and Statistics, Carleton University, Ottawa, Canada  
 **Contact:** aminnabavi@cmail.carleton.ca
-
+**Live Demo:** [https://lineup-cohesion.streamlit.app](https://lineup-cohesion.streamlit.app)
 ---
 
 ## Key Results
@@ -142,6 +142,8 @@ python 11_plots.py
 ```
 
 ### 3. Run Interactive Dashboard
+
+**Live Demo:** [https://lineup-cohesion.streamlit.app](https://lineup-cohesion.streamlit.app)
 
 ```bash
 cd app
