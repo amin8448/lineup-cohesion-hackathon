@@ -417,12 +417,12 @@ def main():
         with col1:
             st.markdown("""
             **Lineup Cohesion Score** measures how well a team's players connect 
-            through their passing network. It combines four components:
+            through their passing network. We analyzed four components — **two were significant predictors**:
             
-            1. **Connectivity** (50%) — How densely connected is the passing network?
-            2. **Chemistry** (25%) — Are critical position pairs (e.g., midfield→attack) linking well?
-            3. **Hub Dependence** (15%) — Does the team funnel play through star players?
-            4. **Progression** (10%) — What % of passes lead to shots?
+            1. **Connectivity** (p < 0.001) — Network density + clustering coefficient ✓
+            2. **Hub Dependence** (p < 0.001) — Gini coefficient of pass involvement ✓
+            3. **Chemistry** (p = 0.919) — Midfield→attack connections — *dropped*
+            4. **Progression** (p = 0.516) — Pre-shot pass ratio — *dropped*
             
             ### Key Finding: The Hub Dependence Paradox
             
@@ -433,8 +433,8 @@ def main():
         
         with col2:
             st.markdown("### Validation")
-            st.metric("Correlation with Points", "r = 0.728")
-            st.metric("Statistical Significance", "p = 0.0006")
+            st.metric("Correlation with Points", "R² = 0.873")
+            st.metric("Statistical Significance", "p < 0.001")
             st.metric("Matches Analyzed", "306")
         
         # League overview
@@ -682,14 +682,16 @@ def main():
             - IMPECT Open Data: 306 Bundesliga 2023/24 matches
             - Event-level passing data processed via Kloppy
             
-            ### Cohesion Score Formula
+            ### Final Model (OLS Regression)
             ```
-            Total = 0.50 × Connectivity + 0.25 × Chemistry + 0.15 × Hub_Dependence + 0.10 × Progression
+            Points = 46.5 + 11.87 × Z_Connectivity + 10.00 × Z_Hub_Dependence
             ```
+            *Chemistry and Progression dropped (p > 0.05)*
             
             ### Validation
-            - Season-level correlation with points: r = 0.728 (p = 0.0006)
-            - Match-level ANOVA: F = 15.23 (p < 0.001)
+            - Season-level R² = 0.873 (p < 0.001) — 87% variance explained
+            - Cross-validation R² = 0.539 (100× random 70/30 splits)
+            - Match-level ANOVA: F = 36.64 (p < 0.0001)
             
             ### GitHub Repository
             [github.com/amin8448/lineup-cohesion-hackathon](https://github.com/amin8448/lineup-cohesion-hackathon)
