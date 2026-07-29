@@ -2,7 +2,7 @@
 
 **NEU Sports Analytics Hackathon 2026** — Prompt A (Starting Eleven Lineup Construction)
 
-**Authors:** Mohammad-Amin Nabavi, Shirley Mills  
+**Authors:** Mohammad-Amin Nabavi 
 **Affiliation:** School of Mathematics and Statistics, Carleton University, Ottawa, Canada  
 **Contact:** aminnabavi@cmail.carleton.ca
 **Live Demo:** [https://lineup-cohesion.streamlit.app](https://lineup-cohesion.streamlit.app)
